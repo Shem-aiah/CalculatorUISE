@@ -1,5 +1,5 @@
 #include "calMain.h"
-<<<<<<< HEAD
+
 wxBEGIN_EVENT_TABLE(calMain, wxFrame)
 wxEND_EVENT_TABLE()
 
@@ -64,14 +64,6 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	wxGridSizer* grid = new wxGridSizer(nFieldWidth, nFieldHeight, 0, 0);
 	this->SetSizer(grid);
 	grid->Layout();
-
-=======
-
-calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50), wxSize(335, 545)) 
-{
-	CalButton = new wxButton(this, wxID_ANY, "+", wxPoint(10, 70), wxSize(100, 30));
-	m_txt1 = new wxTextCtrl(this, wxID_ANY, "Test", wxPoint(10, 10), wxSize(300, 50));
->>>>>>> 739d6e72dd581650230470bdc9e3816e430302d5
 }
 
 calMain::~calMain() 
