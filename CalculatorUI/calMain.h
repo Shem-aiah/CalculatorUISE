@@ -7,13 +7,11 @@ class calMain : public wxFrame
 public:
 	calMain();
 	~calMain();
-	
 public:
-
-	int nFieldWidth = 6;
-	int nFieldHeight = 4;
 	wxButton *CalButton = nullptr;
 	wxTextCtrl *m_txt1 = nullptr;
+	bool bFirstClick = true;
+	void ButtonPressed(wxCommandEvent& evt);
 
 	wxDECLARE_EVENT_TABLE();
 };

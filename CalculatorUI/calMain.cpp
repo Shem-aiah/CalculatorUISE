@@ -1,16 +1,15 @@
 #include "calMain.h"
 
 wxBEGIN_EVENT_TABLE(calMain, wxFrame)
+	EVT_BUTTON(100, ButtonPressed)
+	EVT_BUTTON(101, ButtonPressed)
 wxEND_EVENT_TABLE()
 
 calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50), wxSize(335, 545))
 {
 	wxFont font(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
-	m_txt1 = new wxTextCtrl(this, wxID_ANY, "Test", wxPoint(0, 21), wxSize(322, 50));
+	m_txt1 = new wxTextCtrl(this,wxID_ANY, " ",wxPoint(0, 21), wxSize(322, 50));
 	CalButton = new wxButton(this, wxID_ANY, "Standard", wxPoint(0, 1), wxSize(80, 20));
-	CalButton = new wxButton(this, wxID_ANY, "Binary", wxPoint(79, 1), wxSize(80, 20));
-	CalButton = new wxButton(this, wxID_ANY, "Hex", wxPoint(159, 1), wxSize(80, 20));
-	CalButton = new wxButton(this, wxID_ANY, "Decimal", wxPoint(238, 1), wxSize(80, 20));
 	//Top Buttons
 	CalButton = new wxButton(this, wxID_ANY, "%", wxPoint(1, 70), wxSize(50, 70));
 	CalButton->SetFont(font);
@@ -56,16 +55,25 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	CalButton->SetFont(font);
 	CalButton = new wxButton(this, wxID_ANY, "+/-", wxPoint(30, 366), wxSize(50, 70));
 	CalButton->SetFont(font);
+	
 	CalButton = new wxButton(this, wxID_ANY, "0", wxPoint(90, 366), wxSize(50, 70));
+	CalButton->SetId(101);
 	CalButton->SetFont(font);
-	CalButton = new wxButton(this, wxID_ANY, ".", wxPoint(150, 366), wxSize(50, 70));
+	
+	CalButton = new wxButton(this, 100, ".", wxPoint(150, 366), wxSize(50, 70));
 	CalButton->SetFont(font);
-	//Grid
-	wxGridSizer* grid = new wxGridSizer(nFieldWidth, nFieldHeight, 0, 0);
-	this->SetSizer(grid);
-	grid->Layout();
 }
 
 calMain::~calMain() 
 {
+}
+
+void calMain::ButtonPressed(wxCommandEvent& evt) 
+{
+	if (bFirstClick) {
+		m_txt1->SetLabelText(CalButton->GetLabelText());
+		bFirstClick = false;
+	}
+	
+	evt.Skip();
 }
