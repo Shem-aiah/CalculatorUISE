@@ -10,10 +10,19 @@ public:
 public:
 	//Buttons
 	wxButton* CalButton = nullptr;
+	wxButton* CalButtonSqrt = nullptr;
+	wxButton* CalButtonFrac = nullptr;
+	wxButton* CalButtonDot = nullptr;
+	wxButton* CalButtonPM = nullptr;
 	wxButton* CalButtonP = nullptr;
 	wxButton* CalButtonM = nullptr;
+	wxButton* CalButtonX = nullptr;
+	wxButton* CalButtonD = nullptr;
 	wxButton* CalButtonE = nullptr;
 	wxButton* CalButtonC = nullptr;
+	wxButton* CalButtonCE = nullptr;
+	wxButton* CalButtonDel = nullptr;
+	wxButton* CalButtonPer = nullptr;
 	wxButton* CalButton0 = nullptr;
 	wxButton *CalButton1 = nullptr;
 	wxButton* CalButton2 = nullptr;
@@ -24,9 +33,8 @@ public:
 	wxButton* CalButton7 = nullptr;
 	wxButton* CalButton8 = nullptr;
 	wxButton* CalButton9 = nullptr;
-
 	wxTextCtrl *m_txt1 = nullptr;
-	bool bFirstClick = true;
+	bool PosNeg = true;
 	//Commands
 	void ButtonPressed0(wxCommandEvent& evt);
 	void ButtonPressed1(wxCommandEvent& evt);
@@ -41,8 +49,17 @@ public:
 	//Special Buttons
 	void ButtonPressedPlus(wxCommandEvent& evt);
 	void ButtonPressedMinus(wxCommandEvent& evt);
+	void ButtonPressedTimes(wxCommandEvent& evt);
+	void ButtonPressedDiv(wxCommandEvent& evt);
 	void ButtonPressedEquals(wxCommandEvent& evt);
 	void ButtonPressedClear(wxCommandEvent& evt);
+	void ButtonPressedClearE(wxCommandEvent& evt);
+	void ButtonPressedDelete(wxCommandEvent& evt);
+	void ButtonPressedPer(wxCommandEvent& evt);
+	void ButtonPressedSqrt(wxCommandEvent& evt);
+	void ButtonPressedFraction(wxCommandEvent& evt);
+	void ButtonPressedDot(wxCommandEvent& evt);
+	void ButtonPressedPM(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();
 };
 	
