@@ -28,9 +28,12 @@ private:
 	wxButton* CalButtonCE;
 	wxButton* CalButtonDel;
 	wxButton* CalButtonPer;
+private:
 	wxTextCtrl* m_txt1;
+	wxWindow* factory;
 public:
-	wxButton* CreateAddButton();
+	Factory(wxWindow* FactWindow);
+	wxButton* CreateZeroButton();
 	wxButton* CreateOneButton();
 	wxButton* CreateTwoButton();
 	wxButton* CreateThreeButton();

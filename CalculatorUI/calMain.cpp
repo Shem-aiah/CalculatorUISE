@@ -1,4 +1,7 @@
 #include "calMain.h"
+#include "wx/wx.h"
+#include "Factory.h"
+
 
 wxBEGIN_EVENT_TABLE(calMain, wxFrame)
 EVT_BUTTON(100, ButtonPressed0)
@@ -28,79 +31,13 @@ wxEND_EVENT_TABLE()
 
 calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50), wxSize(335, 545))
 {
+	//Display
 	wxFont font(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	m_txt1 = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 21), wxSize(322, 50));
 	CalButton = new wxButton(this, wxID_ANY, "Standard", wxPoint(0, 1), wxSize(80, 20));
-	//Top Buttons
-	CalButtonPer = new wxButton(this, 1010, "%", wxPoint(1, 70), wxSize(50, 70));
-	CalButtonPer->SetFont(font);
-
-	CalButtonCE = new wxButton(this, 1008, "CE", wxPoint(50, 70), wxSize(50, 70));
-	CalButtonCE->SetFont(font);
-
-	CalButtonC = new wxButton(this, 1003, "C", wxPoint(100, 70), wxSize(50, 70));
-	CalButtonC->SetFont(font);
-
-	CalButtonDel = new wxButton(this, 1009, "Del", wxPoint(150, 70), wxSize(50, 70));
-	CalButtonDel->SetFont(font);
-	CalButtonFrac = new wxButton(this, 1012, "1/x", wxPoint(200, 70), wxSize(50, 70));
-	CalButtonFrac->SetFont(font);
-
-	CalButtonSqrt = new wxButton(this, 1011, "x^2", wxPoint(250, 70), wxSize(70, 70));
-	CalButtonSqrt->SetFont(font);
-
-	//Side Buttons
-	CalButtonD = new wxButton(this, 1007, "/", wxPoint(269, 156), wxSize(50, 70));
-	CalButtonD->SetFont(font);
-
-	CalButtonX = new wxButton(this, 1006, "X", wxPoint(269, 226), wxSize(50, 70));
-	CalButtonX->SetFont(font);
-
-	CalButtonP = new wxButton(this, 1000, "+", wxPoint(269, 366), wxSize(50, 70));
-	CalButtonP->SetFont(font);
-
-	CalButtonM = new wxButton(this, 1001, "-", wxPoint(269, 296), wxSize(50, 70));
-	CalButtonM->SetFont(font);
-
-	CalButtonE = new wxButton(this, 1002, "=", wxPoint(269, 436), wxSize(50, 70));
-	CalButtonE->SetFont(font);
-
-	//Num Pad
-	CalButtonPM = new wxButton(this, 1004, "+/-", wxPoint(30, 366), wxSize(50, 70));
-	CalButtonPM->SetFont(font);
-
-	CalButtonDot = new wxButton(this, 1005, ".", wxPoint(150, 366), wxSize(50, 70));
-	CalButton->SetFont(font);
-
-	CalButton0 = new wxButton(this, 100, "0", wxPoint(90, 366), wxSize(50, 70));
-	CalButton0->SetFont(font);
-
-	CalButton1 = new wxButton(this, 101, "1", wxPoint(30, 296), wxSize(50, 70));
-	CalButton1->SetFont(font);
-
-	CalButton2 = new wxButton(this, 102, "2", wxPoint(90, 296), wxSize(50, 70));
-	CalButton2->SetFont(font);
-
-	CalButton3 = new wxButton(this, 103, "3", wxPoint(150, 296), wxSize(50, 70));
-	CalButton3->SetFont(font);
-
-	CalButton4 = new wxButton(this, 104, "4", wxPoint(30, 226), wxSize(50, 70));
-	CalButton4->SetFont(font);
-
-	CalButton5 = new wxButton(this, 105, "5", wxPoint(90, 226), wxSize(50, 70));
-	CalButton5->SetFont(font);
-
-	CalButton6 = new wxButton(this, 106, "6", wxPoint(150, 226), wxSize(50, 70));
-	CalButton6->SetFont(font);
-
-	CalButton7 = new wxButton(this, 107, "7", wxPoint(30, 156), wxSize(50, 70));
-	CalButton7->SetFont(font);
-
-	CalButton8 = new wxButton(this, 108, "8", wxPoint(90, 156), wxSize(50, 70));
-	CalButton8->SetFont(font);
-
-	CalButton9 = new wxButton(this, 109, "9", wxPoint(150, 156), wxSize(50, 70));
-	CalButton9->SetFont(font);
+	Factory ButtonFactory(this);
+	//NumPad
+	CalButton0 = ButtonFactory.CreateZeroButton();
 }
 
 wxString FirstVal;
@@ -121,7 +58,6 @@ void calMain::ButtonPressedPlus(wxCommandEvent& evt)
 	num1 = wxAtoi(FirstVal);
 	num3 = 1;
 	m_txt1->SetValue("0");
-
 }
 
 void calMain::ButtonPressedMinus(wxCommandEvent& evt)

@@ -2,7 +2,7 @@
 
 wxIMPLEMENT_APP(calUI);
 
-calUI::calUI() 
+calUI::calUI()
 {
 }
 
