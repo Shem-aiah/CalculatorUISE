@@ -4,35 +4,7 @@
 
 class Factory : public wxFrame
 {
-private:
-	wxButton* CalButton0;
-	wxButton* CalButton1;
-	wxButton* CalButton2;
-	wxButton* CalButton3;
-	wxButton* CalButton4;
-	wxButton* CalButton5;
-	wxButton* CalButton6;
-	wxButton* CalButton7;
-	wxButton* CalButton8;
-	wxButton* CalButton9;
-	wxButton* CalButtonSqrt;
-	wxButton* CalButtonFrac;
-	wxButton* CalButtonDot;
-	wxButton* CalButtonPM;
-	wxButton* CalButtonP;
-	wxButton* CalButtonM;
-	wxButton* CalButtonX;
-	wxButton* CalButtonD;
-	wxButton* CalButtonE;
-	wxButton* CalButtonC;
-	wxButton* CalButtonCE;
-	wxButton* CalButtonDel;
-	wxButton* CalButtonPer;
-private:
-	wxTextCtrl* m_txt1;
-	wxWindow* factory;
 public:
-	Factory(wxWindow* FactWindow);
 	wxButton* CreateZeroButton();
 	wxButton* CreateOneButton();
 	wxButton* CreateTwoButton();

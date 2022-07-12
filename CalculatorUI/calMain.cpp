@@ -35,9 +35,33 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	wxFont font(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	m_txt1 = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 21), wxSize(322, 50));
 	CalButton = new wxButton(this, wxID_ANY, "Standard", wxPoint(0, 1), wxSize(80, 20));
-	Factory ButtonFactory(this);
+	Factory ButtonFactory;
 	//NumPad
+	CalButtonPM = ButtonFactory.CreatePMButton();
+	CalButtonDot = ButtonFactory.CreateDotButton();
 	CalButton0 = ButtonFactory.CreateZeroButton();
+	CalButton1 = ButtonFactory.CreateOneButton();
+	CalButton2 = ButtonFactory.CreateTwoButton();
+	CalButton3 = ButtonFactory.CreateThreeButton();
+	CalButton4 = ButtonFactory.CreateFourButton();
+	CalButton5 = ButtonFactory.CreateFiveButton();
+	CalButton6 = ButtonFactory.CreateSixButton();
+	CalButton7 = ButtonFactory.CreateSevenButton();
+	CalButton8 = ButtonFactory.CreateEightButton();
+	CalButton9 = ButtonFactory.CreateNineButton();
+	//Operations
+	CalButtonP = ButtonFactory.CreatePlusButton();
+	CalButtonM = ButtonFactory.CreateMinusButton();
+	CalButtonX = ButtonFactory.CreateTimesButton();
+	CalButtonD = ButtonFactory.CreateDivButton();
+	CalButtonE = ButtonFactory.CreateEqualsButton();
+	CalButtonPer = ButtonFactory.CreatePerButton();
+	//Top Buttons
+	CalButtonC = ButtonFactory.CreateClearButton();
+	CalButtonCE = ButtonFactory.CreateClearEButton();
+	CalButtonDel = ButtonFactory.CreateDotButton();
+	CalButtonSqrt = ButtonFactory.CreateFractionButton();
+	CalButtonFrac = ButtonFactory.CreateFractionButton();
 }
 
 wxString FirstVal;

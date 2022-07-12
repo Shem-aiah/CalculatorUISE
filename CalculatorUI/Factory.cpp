@@ -2,10 +2,6 @@
 #include "calMain.h"
 #include "wx\wx.h"
 
-
-Factory::Factory(wxWindow* FactWindow) {
-	factory = FactWindow;
-}
 //Number Pad
 wxButton* Factory::CreateZeroButton() {
 	wxButton* button;
@@ -106,7 +102,7 @@ wxButton* Factory::CreateDotButton() {
 }
 wxButton* Factory::CreateTimesButton() {
 	wxButton* button;
-	button = CalButtonX = new wxButton(this, 1006, "X", wxPoint(269, 226), wxSize(50, 70));
+	button = new wxButton(this, 1006, "X", wxPoint(269, 226), wxSize(50, 70));
 	button->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &calMain::ButtonPressedTimes, this);
 	return button;
 }
