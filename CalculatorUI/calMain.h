@@ -22,9 +22,9 @@ public:
 	wxButton* CalButtonC = nullptr;
 	wxButton* CalButtonCE = nullptr;
 	wxButton* CalButtonDel = nullptr;
-	wxButton* CalButtonPer = nullptr;
+	wxButton* CalButtonPer;
 	wxButton* CalButton0 = nullptr;
-	wxButton *CalButton1 = nullptr;
+	wxButton* CalButton1 = nullptr;
 	wxButton* CalButton2 = nullptr;
 	wxButton* CalButton3 = nullptr;
 	wxButton* CalButton4 = nullptr;
@@ -33,7 +33,7 @@ public:
 	wxButton* CalButton7 = nullptr;
 	wxButton* CalButton8 = nullptr;
 	wxButton* CalButton9 = nullptr;
-	wxTextCtrl *m_txt1 = nullptr;
+	wxTextCtrl* m_txt1 = nullptr;
 	bool PosNeg = true;
 	//Commands
 	void ButtonPressed0(wxCommandEvent& evt);

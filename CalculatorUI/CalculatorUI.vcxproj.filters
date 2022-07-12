@@ -21,7 +21,7 @@
     <ClInclude Include="calUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ButtonFactory.h">
+    <ClInclude Include="Factory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClCompile Include="calUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ButtonFactory.cpp">
+    <ClCompile Include="Factory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
