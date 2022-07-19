@@ -20,11 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonFactory.h" />
+    <ClInclude Include="CalculatorProcessor.h" />
     <ClInclude Include="calMain.h" />
     <ClInclude Include="calUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonFactory.cpp" />
+    <ClCompile Include="CalculatorProcessor.cpp" />
     <ClCompile Include="calMain.cpp" />
     <ClCompile Include="calUI.cpp" />
   </ItemGroup>
