@@ -3,12 +3,12 @@
 #include "wx/wx.h"
 #include "calMain.h"
 
-class CalculatorProcessor
+class CalculatorProcessor : public wxFrame
 {
 public:
 	CalculatorProcessor(const CalculatorProcessor&) = delete;
 
-	static CalculatorProcessor& Get() 
+	static CalculatorProcessor& Get()
 	{
 		return s_Instance;
 	}
@@ -23,9 +23,32 @@ private:
 	static CalculatorProcessor s_Instance;
 };
 
-CalculatorProcessor CalculatorProcessor::s_Instance;
 
-int main() 
+
+
+/*
+class CalculatorProcessor
 {
-	wxButton* Test = CalculatorProcessor::Get().CalButton();
-}
+static CalculatorProcessor *s_Instance;
+public:
+	CalculatorProcessor(const CalculatorProcessor&) = delete;
+
+	static CalculatorProcessor* Get()
+	{
+		if (s_Instance == false)
+		{
+			s_Instance = new CalculatorProcessor;
+		}
+		return s_Instance;
+	}
+
+	wxButton* CalButton() { return CalButtonM; }
+
+private:
+	CalculatorProcessor() {}
+
+	wxButton* CalButtonM = nullptr;
+
+
+};
+*/

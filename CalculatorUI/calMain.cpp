@@ -1,4 +1,5 @@
 #include "calMain.h"
+#include "CalculatorProcessor.h"
 
 wxBEGIN_EVENT_TABLE(calMain, wxFrame)
 EVT_BUTTON(100, ButtonPressed0)
@@ -55,12 +56,12 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	
 	CalButtonX = new wxButton(this, 1006, "X", wxPoint(269, 226), wxSize(50, 70));
 	CalButtonX->SetFont(font);
-	
-	CalButtonP = new wxButton(this, 1000, "+", wxPoint(269, 366), wxSize(50, 70));
-	CalButtonP->SetFont(font);
 
 	CalButtonM = new wxButton(this, 1001, "-", wxPoint(269, 296), wxSize(50, 70));
 	CalButtonM->SetFont(font);
+	
+	CalButtonP = new wxButton(this, 1000, "+", wxPoint(269, 366), wxSize(50, 70));
+	CalButtonP->SetFont(font);
 	
 	CalButtonE = new wxButton(this, 1002, "=", wxPoint(269, 436), wxSize(50, 70));
 	CalButtonE->SetFont(font);
@@ -361,5 +362,4 @@ void calMain::ButtonPressedFraction(wxCommandEvent& evt) {
 	num1 = wxAtoi(FirstVal);
 	num3 = 7;
 	m_txt1->SetValue("0");
-
 }
