@@ -28,6 +28,7 @@ private:
 	wxButton* CalButtonDel;
 	wxButton* CalButtonPer;
 	wxTextCtrl* m_txt1;
+
 public:
 	wxButton* CreateZeroButton();
 	wxButton* CreateOneButton();
@@ -39,7 +40,6 @@ public:
 	wxButton* CreateSevenButton();
 	wxButton* CreateEightButton();
 	wxButton* CreateNineButton();
-	
 	wxButton* CreatePlusButton();
 	wxButton* CreateMinusButton();
 	wxButton* CreateTimesButton();
@@ -47,7 +47,6 @@ public:
 	wxButton* CreateEqualsButton();
 	wxButton* CreateClearButton();
 	wxButton* CreateClearEButton();
-
 	wxButton* CreateDeleteButton();
 	wxButton* CreatePerButton();
 	wxButton* CreateSqrtButton();
