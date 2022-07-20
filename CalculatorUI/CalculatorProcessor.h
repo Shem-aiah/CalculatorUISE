@@ -41,7 +41,7 @@ public:
 	FractionCommand* fracCommand;
 
 private:
-	CalculatorProcessor() {}
+	CalculatorProcessor() {} //{ return CalculatorProcessor }
 
 	wxButton* CalButtonM = nullptr;
 

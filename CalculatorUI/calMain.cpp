@@ -32,7 +32,6 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	wxFont font(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	m_txt1 = new wxTextCtrl(this,wxID_ANY, "0",wxPoint(0, 21), wxSize(322, 50));
 	CalButton = new wxButton(this, wxID_ANY, "Standard", wxPoint(0, 1), wxSize(80, 20));
-	m_txt1 = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(0, 21), wxSize(322, 50));
 	//Top Buttons
 	CalButtonPer = new wxButton(this, 1010, "%", wxPoint(1, 70), wxSize(50, 70));
 	CalButtonPer->SetFont(font);
@@ -73,7 +72,7 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	
 	CalButtonDot = new wxButton(this, 1005, ".", wxPoint(150, 366), wxSize(50, 70));
 	CalButton->SetFont(font);
-
+	
 	CalButton0 = new wxButton(this, 100, "0", wxPoint(90, 366), wxSize(50, 70));
 	CalButton0->SetFont(font);
 	
@@ -103,11 +102,6 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	
 	CalButton9 = new wxButton(this, 109, "9", wxPoint(150, 156), wxSize(50, 70));
 	CalButton9->SetFont(font);
-}
-
-
-calMain::~calMain() 
-{
 }
 
 wxString FirstVal;
