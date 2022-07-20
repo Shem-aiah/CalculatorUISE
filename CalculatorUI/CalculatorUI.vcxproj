@@ -19,16 +19,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddCommand.h" />
     <ClInclude Include="ButtonFactory.h" />
     <ClInclude Include="CalculatorProcessor.h" />
     <ClInclude Include="calMain.h" />
     <ClInclude Include="calUI.h" />
+    <ClInclude Include="DivCommand.h" />
+    <ClInclude Include="IBaseCommand.h" />
+    <ClInclude Include="MinusCommand.h" />
+    <ClInclude Include="MultCommand.h" />
+    <ClInclude Include="PercentCommand.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddCommand.cpp" />
     <ClCompile Include="ButtonFactory.cpp" />
     <ClCompile Include="CalculatorProcessor.cpp" />
     <ClCompile Include="calMain.cpp" />
     <ClCompile Include="calUI.cpp" />
+    <ClCompile Include="DivCommand.cpp" />
+    <ClCompile Include="IBaseCommand.cpp" />
+    <ClCompile Include="MinusCommand.cpp" />
+    <ClCompile Include="MultCommand.cpp" />
+    <ClCompile Include="PercentCommand.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
