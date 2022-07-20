@@ -25,10 +25,12 @@
     <ClInclude Include="calMain.h" />
     <ClInclude Include="calUI.h" />
     <ClInclude Include="DivCommand.h" />
+    <ClInclude Include="FractionCommand.h" />
     <ClInclude Include="IBaseCommand.h" />
     <ClInclude Include="MinusCommand.h" />
     <ClInclude Include="MultCommand.h" />
     <ClInclude Include="PercentCommand.h" />
+    <ClInclude Include="SqrtCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddCommand.cpp" />
@@ -37,10 +39,12 @@
     <ClCompile Include="calMain.cpp" />
     <ClCompile Include="calUI.cpp" />
     <ClCompile Include="DivCommand.cpp" />
+    <ClCompile Include="FractionCommand.cpp" />
     <ClCompile Include="IBaseCommand.cpp" />
     <ClCompile Include="MinusCommand.cpp" />
     <ClCompile Include="MultCommand.cpp" />
     <ClCompile Include="PercentCommand.cpp" />
+    <ClCompile Include="SqrtCommand.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

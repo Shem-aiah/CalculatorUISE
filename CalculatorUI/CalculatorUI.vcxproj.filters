@@ -45,6 +45,12 @@
     <ClInclude Include="AddCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SqrtCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FractionCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="calMain.cpp">
@@ -75,6 +81,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AddCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SqrtCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FractionCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
