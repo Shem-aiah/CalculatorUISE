@@ -9,7 +9,8 @@ public:
 	~calMain();
 public:
 	//Buttons
-	wxButton* CalButton = nullptr;
+	wxButton* CalButtonHex = nullptr;
+	wxButton* CalButtonDec = nullptr;
 	wxButton* CalButtonSqrt = nullptr;
 	wxButton* CalButtonFrac = nullptr;
 	wxButton* CalButtonDot = nullptr;
@@ -60,6 +61,9 @@ public:
 	void ButtonPressedFraction(wxCommandEvent& evt);
 	void ButtonPressedDot(wxCommandEvent& evt);
 	void ButtonPressedPM(wxCommandEvent& evt);
+	
+	void ButtonPressedHex(wxCommandEvent& evt);
+	void ButtonPressedDec(wxCommandEvent& evt);
 	wxDECLARE_EVENT_TABLE();
 };
 	

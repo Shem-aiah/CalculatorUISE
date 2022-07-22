@@ -30,8 +30,14 @@ wxEND_EVENT_TABLE()
 calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50), wxSize(335, 545))
 {
 	wxFont font(15, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
+	wxFont font2(10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_BOLD, false);
 	m_txt1 = new wxTextCtrl(this,wxID_ANY, "0",wxPoint(0, 21), wxSize(322, 50));
-	CalButton = new wxButton(this, wxID_ANY, "Standard", wxPoint(0, 1), wxSize(80, 20));
+	
+	CalButtonHex = new wxButton(this, wxID_ANY, "Hex", wxPoint(0, 1), wxSize(80, 20));
+	CalButtonHex->SetFont(font2);
+	
+	CalButtonDec = new wxButton(this, wxID_ANY, "Dec", wxPoint(80, 1), wxSize(80, 20));
+	CalButtonDec->SetFont(font2);
 	//Top Buttons
 	CalButtonPer = new wxButton(this, 1010, "%", wxPoint(1, 70), wxSize(50, 70));
 	CalButtonPer->SetFont(font);
@@ -71,7 +77,7 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 	CalButtonPM->SetFont(font);
 	
 	CalButtonDot = new wxButton(this, 1005, ".", wxPoint(150, 366), wxSize(50, 70));
-	CalButton->SetFont(font);
+	CalButtonDot->SetFont(font);
 	
 	CalButton0 = new wxButton(this, 100, "0", wxPoint(90, 366), wxSize(50, 70));
 	CalButton0->SetFont(font);
@@ -107,6 +113,7 @@ calMain::calMain() : wxFrame(nullptr, wxID_ANY, "Calculator UI!", wxPoint(50, 50
 wxString FirstVal;
 wxString LastVal;
 wxString Res;
+const char* test;
 int num1;
 int num2;
 int num3;
@@ -193,6 +200,11 @@ void calMain::ButtonPressedEquals(wxCommandEvent& evt)
 		Res = wxString::Format(wxT("%g"), Answer);
 		m_txt1->SetValue(Res);
 		break;
+	/*case 8:
+		Res = wxString::Format(wxT("%g"), Answer);
+		wxHexToDec(Res);
+		m_txt1->SetValue(Res);
+		break;*/
 	}
 }
 
@@ -363,3 +375,11 @@ void calMain::ButtonPressedFraction(wxCommandEvent& evt) {
 	num3 = 7;
 	m_txt1->SetValue("0");
 }
+
+void calMain::ButtonPressedHex(wxCommandEvent& evt) 
+{
+	FirstVal = m_txt1->GetValue();
+	num1 = wxAtoi(FirstVal);
+	num3 = 8;
+	m_txt1->SetValue("0");
+};

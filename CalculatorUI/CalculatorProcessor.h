@@ -31,7 +31,7 @@ public:
 	float Sqrt(float number1, float number2) { return number1 / number2; }
 	int Mod(int number1, int number2) { return number1 % number2; }
 	
-	std::vector<IBaseCommand> Bases;
+	std::vector<IBaseCommand*> Bases;
 	AddCommand* addCommand;
 	MinusCommand* minCommand;
 	MultCommand* multiCommand;
@@ -41,37 +41,9 @@ public:
 	FractionCommand* fracCommand;
 
 private:
-	CalculatorProcessor() {} //{ return CalculatorProcessor }
+	CalculatorProcessor();
 
 	wxButton* CalButtonM = nullptr;
 
 	static CalculatorProcessor s_Instance;
 };
-
-
-/*
-class CalculatorProcessor
-{
-static CalculatorProcessor *s_Instance;
-public:
-	CalculatorProcessor(const CalculatorProcessor&) = delete;
-
-	static CalculatorProcessor* Get()
-	{
-		if (s_Instance == false)
-		{
-			s_Instance = new CalculatorProcessor;
-		}
-		return s_Instance;
-	}
-
-	wxButton* CalButton() { return CalButtonM; }
-
-private:
-	CalculatorProcessor() {}
-
-	wxButton* CalButtonM = nullptr;
-
-
-};
-*/
